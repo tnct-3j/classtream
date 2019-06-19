@@ -1,0 +1,19 @@
+{
+  "name": "classtream",
+  "version": "1.0.0",
+  "description": "授業にコメントを流すぞい",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tnct-3j/classtream.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tnct-3j/classtream/issues"
+  },
+  "homepage": "https://github.com/tnct-3j/classtream#readme"
+}
