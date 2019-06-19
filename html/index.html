@@ -1,2 +1,24 @@
+<head>
+  <link rel="stylesheet" type="text/css" href="../css/comment.css">
+  <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({ 
+      tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']], 
+        displayMath: [['$$','$$'], ['\\[','\\]']], 
+        processEscapes: true 
+      }
+    });
+  </script>
+</head>
+
 <body style="color:transparent">
+  <div id="screen"></div>
+  <script>
+    let screen = require('../js/comment').screen
+    var a = document.createElement('p')
+    a.innerText = 'hello'
+    screen.send(a)
+  </script>
 </body>

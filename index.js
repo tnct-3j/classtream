@@ -5,7 +5,7 @@ const path = require('path')
 const app = electron.app
 const BrowserWindow = electron.BrowserWindow
 
-const MAIN_HTML = path.join('file://', __dirname, 'main.html')
+const MAIN_HTML = path.join('file://', __dirname, 'html/index.html')
 const CHILD_PADDING = 50
 
 const onAppReady = function () {
@@ -25,6 +25,7 @@ const onAppReady = function () {
 
   parent.maximize();
   parent.setIgnoreMouseEvents(true);
+  //parent.webContents.openDevTools()
 
   parent.once('close', () => {
     parent = null
