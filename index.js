@@ -1,7 +1,6 @@
 const electron = require('electron')
 const path = require('path')
 
-// TODO: リファクタリング
 const app = electron.app
 const BrowserWindow = electron.BrowserWindow
 

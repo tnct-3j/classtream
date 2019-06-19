@@ -16,9 +16,49 @@
 <body style="color:transparent">
   <div id="screen"></div>
   <script>
+    var slackbot = require('slackbots');
+    var fs = require('fs');
+
     let screen = require('../js/comment').screen
-    var a = document.createElement('p')
-    a.innerText = 'hello'
-    screen.send(a)
+   
+    var config = fs.readFileSync('config.json', 'utf-8');
+    config = JSON.parse(config);
+
+    var bot = new slackbot({
+      token: config.token,
+      name: config.channel
+    });
+
+    bot.on('message', (data) => {
+      if (data.type == "reaction_added") {
+        var ts = data.item.ts;
+        screen.fixed.remove((data) => {
+          return data.option.ts == ts;
+        });
+      }
+
+      if (data.type != "message") { 
+        return
+      }
+
+      if(data.text == "reset") {
+        screen.fixed.removeAll()
+        return
+      }
+
+      let element = document.createElement('p')
+      if (data.text.substr(0, 4) == '&gt;') {
+        element.innerText = data.text.substr(4)
+
+        comment = screen.send(element, true, {
+          ts: data.ts
+        });
+      }
+      else {
+        element.innerText = data.text;
+        comment = screen.send(element);
+      }
+    })
+    
   </script>
 </body>
