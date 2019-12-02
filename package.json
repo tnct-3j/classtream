@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/tnct-3j/classtream#readme",
   "dependencies": {
-    "slackbots": "^1.2.0"
+    "slackbots": "^1.2.0",
+    "ws": ">=3.3.1"
   }
 }
